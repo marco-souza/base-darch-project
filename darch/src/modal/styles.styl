@@ -1,0 +1,149 @@
+@require "~styles/variables"
+@require "~styles/utils"
+@require "~styles/animation"
+
+:global(.modal-open)
+    overflow: hidden;
+
+.modal
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $modal-zindex;
+    padding: 0pt 10pt 0 10pt;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+.background
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity(0.9);
+    z-index: -1;
+
+.content
+    position: relative;
+    margin: 0 auto;
+    background: white;
+    background-clip: padding-box;
+    outline: none;
+    width: 100%;
+    top: 30pt;
+
+    shadow(0pt 2pt 7pt #336E7B)
+
+    @media (min-width: $screen-tablet-min)
+        width: $modal-width-md;
+
+.content-sm
+    @media (min-width: $screen-tablet-min)
+        width: $modal-width-sm;
+
+.content-lg
+    @media (min-width: $screen-laptop-min)
+        width: $modal-width-lg;
+
+.enter
+    .background
+        opacity(0);
+
+    .content
+        top: -10pt;
+        opacity(0) !important;
+
+.enter-active
+    .background
+        opacity(0.9);
+        transition(opacity .3s ease-in-out);
+
+    .content
+        top: 30pt;
+        opacity(1);
+        transition-property(top,opacity);
+        transition-duration(.3s);
+        transition-timing-function(ease-in-out);
+
+.leave
+    .background
+        opacity(0.9)
+        transition(opacity .3s ease-in-out);
+
+    .content
+        top: 30pt;
+        opacity(1);
+        transition-property(top,opacity);
+        transition-duration(.3s);
+        transition-timing-function(ease-in-out);
+
+.leave-active
+    .background
+        opacity(0)
+
+    .content
+        top: -10pt;
+        opacity(0);
+
+/*:global(.modal-background-appear)
+    opacity(0)
+
+:global(.modal-background-appear-active)
+    opacity(0.9)
+    transition(opacity .5s ease-in);
+
+:global(.modal-background-enter)
+    opacity(0)
+
+:global(.modal-background-enter-active)
+    opacity(0.9)
+    transition(opacity .5s ease-in);
+
+:global(.modal-background-leave-active)
+    opacity(0)
+
+.modal-content
+    position: relative;
+    margin: 0 auto;
+    background: white;
+    background-clip: padding-box;
+    outline: none;
+    width: 100%;
+    top: 30pt;
+
+    shadow(0pt 2pt 7pt #336E7B)
+
+    @media (min-width: $screen-tablet-min)
+        width: $modal-width-md;
+
+:global(.modal-content-appear)
+    top: -10pt;
+    opacity(0);
+    transition-property(top,opacity);
+    transition-duration(0.3s);
+    transition-timing-function(ease-in);
+
+:global(.modal-content-appear-active)
+    top: 30pt;
+    opacity(1);
+
+:global(.modal-content-enter)
+    top: -10pt;
+    opacity(0);
+    transition-property(top,opacity);
+    transition-duration(0.3s);
+    transition-timing-function(ease-in);
+
+:global(.modal-content-enter-active)
+    top: 30pt;
+    opacity(1);
+
+:global(.modal-content-leave-active)
+    top: -10pt;
+    opacity(0);
+*/

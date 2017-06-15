@@ -1,0 +1,72 @@
+@require "~styles/variables"
+@require "~styles/animation"
+
+$vred = red($field-border-color-validating)
+$vgreen = green($field-border-color-validating)
+$vblue = blue($field-border-color-validating)
+
+$bvred = red($field-bg-color)
+$bvgreen = green($field-bg-color)
+$bvblue = blue($field-bg-color)
+
+// $tred = red($field-text-color-validating)
+// $tgreen = green($field-text-color-validating)
+// $tblue = blue($field-text-color-validating)
+$tred = red($text-color)
+$tgreen = green($text-color)
+$tblue = blue($text-color)
+
+
+placeholder($color)
+    &:-moz-placeholder                  {color: $color;}
+    &::-moz-placeholder                 {color: $color; opacity: 1;}
+    &:-ms-input-placeholder             {color: $color;}
+    &::-webkit-input-placeholder        {color: $color;}
+
+active()
+    outline: none;
+    border-color: $field-border-color-focus;
+
+invalid()
+    border-color: $field-border-color-invalid;
+
+    &:focus
+        border-color: $field-border-color-invalid;
+
+.field-active
+    active()
+
+.field
+    display: block;
+    width: 100%;
+    font-size: $text-size;
+    font-weight: $text-weight;
+    padding: $field-padding-vertical $field-padding-horizontal;
+    border: 1pt solid transparent;
+    border-radius: $field-border-radius;
+    margin: 0;
+
+    color: $text-color;
+    background-color: $field-bg-color;
+    border-color: $field-border-color;
+
+    transition(all 0.3s ease-in-out)
+    placeholder($field-placeholder-color)
+
+    &:focus
+        active()
+
+    &.invalid
+        invalid()
+    
+    &.validating
+        color: rgba($tred, $tgreen, $tblue, 0.6);
+        animation(validating infinite 0.8s ease-in-out);
+            
+@keyframes validating
+    0%
+        border-color: rgba($vred, $vgreen, $vblue, 1);
+    50%
+        border-color: rgba($vred, $vgreen, $vblue, 0.6);
+    100%
+        border-color: rgba($vred, $vgreen, $vblue, 1);

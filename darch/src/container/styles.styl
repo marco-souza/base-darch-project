@@ -1,0 +1,33 @@
+@require "~styles/variables"
+@require "~styles/utils"
+
+.container
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left:  ($grid-gap-horizontal);
+    padding-right: ($grid-gap-horizontal);
+    clearfix();
+
+    @media (min-width: $screen-tablet-min)
+        width: $container-sm;
+    @media (min-width: $screen-laptop-min)
+        width: $container-md;
+    @media (min-width: $screen-desktop-min)
+        width: $container-lg;
+
+.container-md
+    @media (min-width: $screen-tablet-min)
+        width: $container-sm;
+    @media (min-width: $screen-laptop-min)
+        width: $container-md;
+    @media (min-width: $screen-desktop-min)
+        width: $container-md;
+
+.container-sm
+    @media (min-width: $screen-tablet-min)
+        width: $container-sm;
+    @media (min-width: $screen-laptop-min)
+        width: $container-sm;
+    @media (min-width: $screen-desktop-min)
+        width: $container-sm;

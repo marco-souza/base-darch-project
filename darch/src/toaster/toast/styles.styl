@@ -1,0 +1,23 @@
+@require "~styles/animation"
+@require "~styles/utils"
+
+.toast
+    color: white;
+    background-color: rgba(0,0,0, 0.8);
+    border-left: 7pt solid transparent;
+    padding: 10pt;
+
+    animation-duration(1s)
+
+    &.type-error
+        border-color: #ed4545;
+    &.type-success
+        border-color: #26A65B;
+    &.type-info
+        border-color: #397cac;
+
+    &:global(.transition-enter)
+        animation-name(bounceInUp)
+
+    &:global(.transition-leave.transition-leave-active)
+        animation-name(bounceOutRight)

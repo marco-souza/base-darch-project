@@ -1,0 +1,14 @@
+@require "./utils"
+
+$cbl-general-box-sizing = border-box
+
+general-box-sizing()
+    margin: 0;
+
+    *,
+    *:before,
+    *:after
+        box-sizing($cbl-general-box-sizing)
+
+general-main()
+    general-box-sizing()

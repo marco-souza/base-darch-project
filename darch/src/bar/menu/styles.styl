@@ -1,0 +1,24 @@
+@require "~styles/utils";
+@require "~styles/variables";
+
+menuScreenLg()
+    padding: 0;
+    margin: 0;
+    height: $bar-height;
+    display: table;
+    float: left;
+    clearfix();
+
+.menu-screen-lg
+    menuScreenLg()
+
+.menu
+    list-style: none;
+    height: auto;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: $screen-tablet-min)
+        menuScreenLg()

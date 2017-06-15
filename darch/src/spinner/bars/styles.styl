@@ -1,0 +1,33 @@
+@require "~styles/variables"
+
+.spinner
+    width: auto;
+    height: 1em;
+    font-size: 1em;
+    line-height: 0;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+
+.spinner > div
+    height: 100%;
+    display: inline-block;
+
+    -webkit-animation: sk-stretchdelay 1.0s infinite ease-in-out;
+    animation: sk-stretchdelay 1.0s infinite ease-in-out;
+
+.spinner .rect2
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+
+.spinner .rect3
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+
+@keyframes sk-stretchdelay
+    0%, 40%, 100%
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    20%
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);

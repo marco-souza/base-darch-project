@@ -1,0 +1,59 @@
+@require "~darch/src/styles/variables";
+@require "~darch/src/styles/animation";
+
+$height = 1em+2*$field-padding-vertical;
+
+.switch-container
+    display: inline-block;
+
+.switch
+    background-color: #fff;
+    border: 1pt solid #dfdfdf;
+    border-radius: 0.7*$height;
+    cursor: pointer;
+    display: inline-block;
+    height: $height;
+    position: relative;
+    vertical-align: middle;
+    width: 1.7*$height;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    
+    transition(all 0.2s ease-in-out);
+
+    .ball
+        background: #fff;
+        border-radius: 100%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        height: $height;
+        position: absolute;
+        top: 0;
+        width: $height;
+        
+        transition(all 0.2s ease-in-out);
+
+.switch-on
+    .ball
+        right: 0;
+
+.switch-off
+    .ball
+        left: 0;
+
+.switch-label
+    font-size: 0.7em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    font-weight: 500;

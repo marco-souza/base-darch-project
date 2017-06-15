@@ -1,0 +1,31 @@
+@require "~styles/variables"
+@require "~styles/utils"
+@require "~styles/animation"
+
+.label
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.1em 0.5em;
+    border-radius: 0.3em;
+
+.label-flat
+    color: $text-color;
+    background-color: white;
+
+
+label-flat-color-schema($name, $color)
+    .label-flat-{$name}
+        if bright($color, 200)
+            color: $color-dark;
+        else
+            color: $color-light;
+
+        background-color: $color;
+
+label-flat-color-schema("positive", $color-positive);
+label-flat-color-schema("moody", $color-moody);
+label-flat-color-schema("calm", $color-calm);
+label-flat-color-schema("stable", $color-stable);
+label-flat-color-schema("success", $color-success);
+label-flat-color-schema("warning", $color-warning);
+label-flat-color-schema("danger", $color-danger);
