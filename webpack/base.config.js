@@ -1,3 +1,4 @@
+/* global __dirname */
 var path                = require("path"),
     webpack             = require("webpack"),
     config              = require("../gulp.config").app;
